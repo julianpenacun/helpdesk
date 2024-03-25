@@ -5,7 +5,7 @@
 <main class='container py-5'>
     <section class="card card-body">
 
-        <h1 class=" display-3 text-center">Sistema de Solicitudes</h1>
+        <h1 class="display-3 text-center">Sistema de Solicitudes</h1>
         <p>Un sistema de solicitudes básico podría funcionar de la siguiente manera:</p>
         <ol>
             <li><strong>Creación de Solicitudes:</strong>
@@ -23,8 +23,7 @@
             </li>
             <li><strong>Gestión de Solicitudes:</strong>
                 <ul>
-                    <li>Los usuarios pueden ver una lista de todas las solicitudes creadas y filtrarlas según su estado
-                        o prioridad.</li>
+                    <li>Los usuarios pueden ver una lista de todas las solicitudes creadas y una sección con las importantes.</li>
                     <li>Las solicitudes pueden ser actualizadas por los usuarios, eliminandolas o completándolas con un botón.
                     </li>
                 </ul>
@@ -33,7 +32,11 @@
         <p>Este sistema puede ser tan simple o complejo como se requiera, y puede ser personalizado para adaptarse a las
             necesidades específicas de gestión de tareas o proyectos.</p>
 
+
         {% if not user.is_authenticated %}
+
+        <hr>
+
         <div class="text-center">
             <a class="btn btn-primary" href="{% url 'inicio_sesion' %}"> Iniciar Sesión </a>
             <a class="btn btn-secondary" href="{% url 'registro' %}"> Registrarse </a>

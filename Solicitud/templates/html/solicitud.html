@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-6 offset-md-3 mb-4">
             {% csrf_token %}
-            <h1 class="text-center display-3 py-5">Solicitudes</h1>
+            <h1 class="display-6 py-5">{{titulo}}</h1>
 
             <ol class="list-group">
                 {% for solicitud in lista_solicitudes %}
@@ -18,6 +18,10 @@
 
                     </header>
                     <p>{{solicitud.descripcion}}</p>
+                    {% if solicitud.fecha_finalización__isnull %}
+                    <h4>Realizada</h4>
+                    <p>{{solicitud.fecha_finalización}}</p>
+                    {% endif %}
 
                 </a>
                 {% endfor %}
