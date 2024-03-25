@@ -11,7 +11,7 @@
                     <h1 class="text-center display-3 py-5">{{solicitud.titulo}}</h1>
                     {% csrf_token %}
                     {{formulario.as_p}}
-                    <button class="btn btn-primary my-1">Guardar</button>
+                    <button class="btn btn-primary my-1">Actualizar</button>
                 </form>
                 
                 <form action="{% url 'solicitudes_completa' solicitud.id %}" method="POST">

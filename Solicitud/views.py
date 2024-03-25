@@ -76,6 +76,7 @@ def Solicitud(request):
     solicitud = Solicitudes.objects.filter(fecha_finalización__isnull=True)
     return render(request, 'html/solicitud.html', {
         'lista_solicitudes': solicitud,
+        'titulo':'Solicitudes Pendientes'
     })
 
 @login_required
@@ -85,6 +86,7 @@ def Solicitud_Todas(request):
     solicitud = Solicitudes.objects.all
     return render(request, 'html/solicitud.html', {
         'lista_solicitudes': solicitud,
+        'titulo':'Todas las solicitudes'
     })
 
 @login_required
