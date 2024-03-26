@@ -18,9 +18,9 @@
 
                     </header>
                     <p>{{solicitud.descripcion}}</p>
-                    {% if solicitud.fecha_finalización == null %}
-                    <h4>Realizada</h4>
-                    <p>{{solicitud.fecha_finalización}}</p>
+                    {% if not solicitud.fecha_finalización == null %}
+                    <h6>Realizada</h6>
+                    <h6>{{solicitud.fecha_finalización}}</h6>
                     {% endif %}
 
                 </a>
