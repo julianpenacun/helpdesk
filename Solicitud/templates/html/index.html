@@ -5,8 +5,9 @@
 <main class='container py-5'>
     <section class="card card-body">
 
-        <h1 class="display-3 text-center">Sistema de Solicitudes</h1>
-        <p>Un sistema de solicitudes básico podría funcionar de la siguiente manera:</p>
+        <h1 class="display-3 text-center">Helpdesk App</h1>
+        <h6 class="text-center">ALPHA VERSION</h6>
+        <p>Estes sistema de gestión funciona de la siguiente manera:</p>
         <ol>
             <li><strong>Creación de Solicitudes:</strong>
                 <ul>
@@ -23,14 +24,12 @@
             </li>
             <li><strong>Gestión de Solicitudes:</strong>
                 <ul>
-                    <li>Los usuarios pueden ver una lista de todas las solicitudes creadas y una sección con las importantes.</li>
+                    <li>Los usuarios pueden ver una lista de todas las solicitudes creadas y pendientes por completar.</li>
                     <li>Las solicitudes pueden ser actualizadas por los usuarios, eliminandolas o completándolas con un botón.
                     </li>
                 </ul>
             </li>
         </ol>
-        <p>Este sistema puede ser tan simple o complejo como se requiera, y puede ser personalizado para adaptarse a las
-            necesidades específicas de gestión de tareas o proyectos.</p>
 
 
         {% if not user.is_authenticated %}

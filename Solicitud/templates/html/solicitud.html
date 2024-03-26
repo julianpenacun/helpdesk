@@ -18,7 +18,7 @@
 
                     </header>
                     <p>{{solicitud.descripcion}}</p>
-                    {% if solicitud.fecha_finalización__isnull %}
+                    {% if solicitud.fecha_finalización == null %}
                     <h4>Realizada</h4>
                     <p>{{solicitud.fecha_finalización}}</p>
                     {% endif %}
