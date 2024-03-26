@@ -119,7 +119,7 @@ def Detalle_Solicitud(request, solicitud_id: int):
 
     if request.method == 'GET':
 
-        solicitud = get_object_or_404(Solicitudes, pk=solicitud_id, usuario = request.user)
+        solicitud = get_object_or_404(Solicitudes, pk=solicitud_id) #, usuario = request.user
         formulario = FormularioSolicitudes(instance=solicitud)
         return render(request, 'html/detalle_solicitud.html',
                     {
@@ -128,7 +128,7 @@ def Detalle_Solicitud(request, solicitud_id: int):
                     })
     else:
         try:
-            solicitud = get_object_or_404(Solicitudes, pk=solicitud_id, usuario = request.user)
+            solicitud = get_object_or_404(Solicitudes, pk=solicitud_id) #, usuario = request.user
             formulario = FormularioSolicitudes(request.POST, instance=solicitud)
             formulario.save()
             return redirect('solicitudes')
@@ -142,7 +142,7 @@ def Detalle_Solicitud(request, solicitud_id: int):
 
 @login_required        
 def Completar_Solicitud(request, solicitud_id):
-    solicitud = get_object_or_404(Solicitudes, pk=solicitud_id, usuario=request.user)
+    solicitud = get_object_or_404(Solicitudes, pk=solicitud_id) #, usuario = request.user
 
     if request.method == 'POST':
         solicitud.fecha_finalización = timezone.now()
@@ -151,7 +151,7 @@ def Completar_Solicitud(request, solicitud_id):
 
 @login_required    
 def Eliminar_Solicitud(request, solicitud_id):
-    solicitud = get_object_or_404(Solicitudes, pk=solicitud_id, usuario=request.user)
+    solicitud = get_object_or_404(Solicitudes, pk=solicitud_id) #, usuario = request.user
     if request.method == 'POST':
         solicitud.delete()
         return redirect('solicitudes')

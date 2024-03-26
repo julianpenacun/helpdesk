@@ -8,19 +8,23 @@
             
             <div class="card card-body">
                 <form method="POST">
-                    <h1 class="text-center display-3 py-5">{{solicitud.titulo}}</h1>
+                    <h1 class="text-center display-6 py-5"> Solicitud #{{solicitud.id}}</h1>
                     {% csrf_token %}
                     {{formulario.as_p}}
+<<<<<<< HEAD
                     <button class="btn btn-primary my-1">Actualizar</button>
+=======
+                    <button class="btn btn-warning my-1">Actualizar</button>
+>>>>>>> main
                 </form>
                 
                 <form action="{% url 'solicitudes_completa' solicitud.id %}" method="POST">
                     {% csrf_token %}
-                    <button class="btn btn-primary my-1">Completar</button>
+                    <button class="btn btn-success my-1">Completar</button>
                 </form>
                 <form action="{% url 'solicitudes_eliminar' solicitud.id %}" method="POST">
                     {% csrf_token %}
-                    <button class="btn btn-primary my-1">Eliminar</button>
+                    <button class="btn btn-danger my-1">Eliminar</button>
                 </form>
                 <hr>
                 {{error}}
